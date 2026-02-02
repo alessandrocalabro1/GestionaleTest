@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "A premium OpenUI5 Management Application",
   "scripts": {
-    "start": "ui5 serve"
+    "start": "ui5 serve",
+    "build": "ui5 build --clean-dest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
-    "@ui5/cli": "^3.0.0"
+    "@ui5/cli": "^3.0.0",
+    "gh-pages": "^6.3.0"
   }
 }

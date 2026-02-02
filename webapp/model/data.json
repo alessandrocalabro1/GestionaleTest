@@ -13,7 +13,8 @@
             "price": 1299.99,
             "status": "In Stock",
             "statusState": "Success",
-            "quantity": 45
+            "quantity": 45,
+            "supplier": "TechCorp Inc."
         },
         {
             "id": "P002",
@@ -22,7 +23,8 @@
             "price": 49.99,
             "status": "Low Stock",
             "statusState": "Warning",
-            "quantity": 5
+            "quantity": 5,
+            "supplier": "GadgetWorld"
         },
         {
             "id": "P003",
@@ -31,7 +33,8 @@
             "price": 450.00,
             "status": "Out of Stock",
             "statusState": "Error",
-            "quantity": 0
+            "quantity": 0,
+            "supplier": "DisplayMasters"
         },
         {
             "id": "P004",
@@ -40,7 +43,8 @@
             "price": 120.50,
             "status": "In Stock",
             "statusState": "Success",
-            "quantity": 120
+            "quantity": 120,
+            "supplier": "KeyMech"
         },
         {
             "id": "P005",
@@ -49,7 +53,8 @@
             "price": 35.00,
             "status": "In Stock",
             "statusState": "Success",
-            "quantity": 200
+            "quantity": 200,
+            "supplier": "Connectify"
         },
         {
             "id": "P006",
@@ -58,7 +63,8 @@
             "price": 299.00,
             "status": "Low Stock",
             "statusState": "Warning",
-            "quantity": 3
+            "quantity": 3,
+            "supplier": "ComfortSeat"
         },
         {
             "id": "P007",
@@ -67,7 +73,97 @@
             "price": 550.00,
             "status": "In Stock",
             "statusState": "Success",
-            "quantity": 15
+            "quantity": 15,
+            "supplier": "DeskImprovers"
+        }
+    ],
+    "customers": [
+        {
+            "id": "C001",
+            "name": "Acme Corp",
+            "contact": "John Doe",
+            "email": "john.doe@acme.com",
+            "status": "Gold",
+            "statusState": "Success",
+            "country": "USA"
+        },
+        {
+            "id": "C002",
+            "name": "Global Services",
+            "contact": "Jane Smith",
+            "email": "jane.smith@globalservices.com",
+            "status": "Silver",
+            "statusState": "Information",
+            "country": "UK"
+        },
+        {
+            "id": "C003",
+            "name": "StartUp Hub",
+            "contact": "Mike Johnson",
+            "email": "mike@startuphub.io",
+            "status": "Bronze",
+            "statusState": "None",
+            "country": "Germany"
+        },
+        {
+            "id": "C004",
+            "name": "Tech Solutions",
+            "contact": "Sarah Connor",
+            "email": "sarah@techsol.org",
+            "status": "Gold",
+            "statusState": "Success",
+            "country": "USA"
+        },
+        {
+            "id": "C005",
+            "name": "Logistics Pro",
+            "contact": "Davide Rossi",
+            "email": "d.rossi@logipro.it",
+            "status": "Silver",
+            "statusState": "Information",
+            "country": "Italy"
+        }
+    ],
+    "orders": [
+        {
+            "orderId": "ORD-2023-1001",
+            "customer": "Acme Corp",
+            "amount": 2500.00,
+            "status": "Shipped",
+            "statusState": "Success",
+            "date": "2023-10-15"
+        },
+        {
+            "orderId": "ORD-2023-1002",
+            "customer": "Global Services",
+            "amount": 1200.50,
+            "status": "Processing",
+            "statusState": "Warning",
+            "date": "2023-10-16"
+        },
+        {
+            "orderId": "ORD-2023-1003",
+            "customer": "StartUp Hub",
+            "amount": 350.00,
+            "status": "New",
+            "statusState": "Information",
+            "date": "2023-10-17"
+        },
+        {
+            "orderId": "ORD-2023-1004",
+            "customer": "Tech Solutions",
+            "amount": 5400.00,
+            "status": "Shipped",
+            "statusState": "Success",
+            "date": "2023-10-14"
+        },
+        {
+            "orderId": "ORD-2023-1005",
+            "customer": "Logistics Pro",
+            "amount": 890.00,
+            "status": "Cancelled",
+            "statusState": "Error",
+            "date": "2023-10-12"
         }
     ],
     "salesHistory": [

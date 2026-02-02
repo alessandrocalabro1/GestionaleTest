@@ -1,0 +1,80 @@
+<mvc:View
+    controllerName="gestionale.controller.Customers"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout">
+
+    <f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="{i18n>customersTitle}"/>
+                </f:heading>
+                <f:navigationActions>
+                    <Button
+                        icon="sap-icon://nav-back"
+                        tooltip="Back to Dashboard"
+                        press=".onNavBack"/>
+                </f:navigationActions>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <layout:HorizontalLayout allowWrapping="true">
+                    <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                        <Label text="Search Customers:"/>
+                        <SearchField width="100%" search=".onSearch" placeholder="{i18n>searchPlaceholder}"/>
+                    </layout:VerticalLayout>
+                </layout:HorizontalLayout>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+            <Table
+                id="customersTable"
+                inset="false"
+                items="{
+                    path: 'productModel>/customers',
+                    sorter: {
+                        path: 'name'
+                    }
+                }"
+                class="sapFDynamicPageAlignContent"
+                width="auto">
+                <columns>
+                    <Column width="12em">
+                        <Text text="{i18n>customerName}" />
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="{i18n>contactPerson}" />
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>email}" />
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+                        <Text text="{i18n>customerStatus}" />
+                    </Column>
+                    <Column hAlign="Center">
+                        <Text text="{i18n>country}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active">
+                        <cells>
+                            <ObjectIdentifier title="{productModel>name}" text="{productModel>id}"/>
+                            <Text text="{productModel>contact}" />
+                            <Link text="{productModel>email}" href="mailto:{productModel>email}" />
+                            <ObjectStatus
+                                text="{productModel>status}"
+                                state="{productModel>statusState}"
+                                inverted="true" />
+                            <Text text="{productModel>country}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
