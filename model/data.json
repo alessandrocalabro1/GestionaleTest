@@ -1,0 +1,99 @@
+{
+    "metrics": {
+        "totalRevenue": "12.5M €",
+        "revenueGrowth": 12.5,
+        "activeEmployees": 142,
+        "newOrders": 35
+    },
+    "products": [
+        {
+            "id": "P001",
+            "name": "Notebook Premium Pro",
+            "category": "Electronics",
+            "price": 1299.99,
+            "status": "In Stock",
+            "statusState": "Success",
+            "quantity": 45
+        },
+        {
+            "id": "P002",
+            "name": "Wireless Ergonomic Mouse",
+            "category": "Accessories",
+            "price": 49.99,
+            "status": "Low Stock",
+            "statusState": "Warning",
+            "quantity": 5
+        },
+        {
+            "id": "P003",
+            "name": "4K Ultra Monitor 32\"",
+            "category": "Electronics",
+            "price": 450.00,
+            "status": "Out of Stock",
+            "statusState": "Error",
+            "quantity": 0
+        },
+        {
+            "id": "P004",
+            "name": "Mechanical Keyboard RGB",
+            "category": "Accessories",
+            "price": 120.50,
+            "status": "In Stock",
+            "statusState": "Success",
+            "quantity": 120
+        },
+        {
+            "id": "P005",
+            "name": "USB-C Hub Multiport",
+            "category": "Accessories",
+            "price": 35.00,
+            "status": "In Stock",
+            "statusState": "Success",
+            "quantity": 200
+        },
+        {
+            "id": "P006",
+            "name": "Office Chair Ergonomic",
+            "category": "Furniture",
+            "price": 299.00,
+            "status": "Low Stock",
+            "statusState": "Warning",
+            "quantity": 3
+        },
+        {
+            "id": "P007",
+            "name": "Standing Desk Motorized",
+            "category": "Furniture",
+            "price": 550.00,
+            "status": "In Stock",
+            "statusState": "Success",
+            "quantity": 15
+        }
+    ],
+    "salesHistory": [
+        {
+            "month": "Jan",
+            "revenue": 80
+        },
+        {
+            "month": "Feb",
+            "revenue": 95
+        },
+        {
+            "month": "Mar",
+            "revenue": 110
+        },
+        {
+            "month": "Apr",
+            "revenue": 105
+        },
+        {
+            "month": "May",
+            "revenue": 140
+        },
+        {
+            "month": "Jun",
+            "revenue": 160
+        }
+    ]
+}

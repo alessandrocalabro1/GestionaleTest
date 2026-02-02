@@ -1,0 +1,105 @@
+<mvc:View
+    controllerName="gestionale.controller.ProductList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout">
+
+    <f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="{i18n>productsTitle}"/>
+                </f:heading>
+                <f:actions>
+                    <Button
+                        text="Add Product"
+                        type="Emphasized"
+                        press=".onAddProduct"
+                        icon="sap-icon://add"/>
+                </f:actions>
+                <f:navigationActions>
+                    <Button
+                        icon="sap-icon://nav-back"
+                        tooltip="Back to Dashboard"
+                        press=".onNavBack"/>
+                </f:navigationActions>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <!-- DynamicPage Header -->
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <layout:HorizontalLayout allowWrapping="true">
+                    <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                        <Label text="Filter Products:"/>
+                        <SearchField width="100%" search=".onSearch" placeholder="Search by name..."/>
+                    </layout:VerticalLayout>
+                </layout:HorizontalLayout>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <!-- DynamicPage Content -->
+        <f:content>
+            <Table
+                id="productsTable"
+                inset="false"
+                items="{
+                    path: 'productModel>/products',
+                    sorter: {
+                        path: 'name'
+                    }
+                }"
+                mode="SingleSelectMaster"
+                selectionChange=".onProductSelect">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <content>
+                            <Title text="Products ({= ${productModel>/products}.length})" level="H2"/>
+                            <ToolbarSpacer />
+                            <Button icon="sap-icon://sort" press=".onSort" />
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column width="12em">
+                        <Text text="{i18n>productName}" />
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="{i18n>category}" />
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+                        <Text text="{i18n>price}" />
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                        <Text text="{i18n>status}" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="{i18n>quantity}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation">
+                        <cells>
+                            <ObjectIdentifier title="{productModel>name}" text="{productModel>id}"/>
+                            <Text text="{productModel>category}" />
+                            <ObjectNumber
+                                number="{
+                                    parts:[{path:'productModel>price'},{path:'i18n>currency'}],
+                                    type: 'sap.ui.model.type.Currency',
+                                    formatOptions: {showMeasure: true}
+                                }"
+                                state="Success" />
+                            <ObjectStatus
+                                text="{productModel>status}"
+                                state="{productModel>statusState}"
+                                icon="sap-icon://circle-task-2" />
+                            <Text text="{productModel>quantity}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
