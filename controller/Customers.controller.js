@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/Filter","sap/ui/model/FilterOperator","sap/ui/core/UIComponent"],function(e,t,n,o){"use strict";return e.extend("gestionale.controller.Customers",{onInit:function(){},onNavBack:function(){var e=o.getRouterFor(this);e.navTo("RouteDashboard")},onSearch:function(e){var o=[];var r=e.getSource().getValue();if(r&&r.length>0){var i=new t("name",n.Contains,r);o.push(i)}var a=this.byId("customersTable");var s=a.getBinding("items");s.filter(o,"Application")}})});
+//# sourceMappingURL=Customers.controller.js.map

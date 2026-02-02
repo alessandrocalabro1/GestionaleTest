@@ -61,10 +61,20 @@
                 </HeaderContainer>
 
                 <Title text="Quick Actions" class="sapUiSmallMarginTop mw-100" />
-                <HBox class="sapUiSmallMarginTop">
+                <HBox class="sapUiSmallMarginTop" wrap="Wrap">
                     <GenericTile class="sapUiTinyMarginBegin tileLayout" header="Manage Products" subheader="Inventory control" press=".onNavToProducts">
                         <TileContent>
                             <ImageContent src="sap-icon://product" />
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile class="sapUiTinyMarginBegin tileLayout" header="Manage Customers" subheader="Client Directory" press=".onNavToCustomers">
+                        <TileContent>
+                            <ImageContent src="sap-icon://customer" />
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile class="sapUiTinyMarginBegin tileLayout" header="Manage Orders" subheader="Track Shipments" press=".onNavToOrders">
+                        <TileContent>
+                            <ImageContent src="sap-icon://shipping-status" />
                         </TileContent>
                     </GenericTile>
                 </HBox>

@@ -1,0 +1,86 @@
+<mvc:View
+    controllerName="gestionale.controller.Orders"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout">
+
+    <f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="{i18n>ordersTitle}"/>
+                </f:heading>
+                <f:navigationActions>
+                    <Button
+                        icon="sap-icon://nav-back"
+                        tooltip="Back to Dashboard"
+                        press=".onNavBack"/>
+                </f:navigationActions>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:content>
+            <Table
+                id="ordersTable"
+                inset="false"
+                items="{
+                    path: 'productModel>/orders',
+                    sorter: {
+                        path: 'date',
+                        descending: true
+                    }
+                }"
+                class="sapFDynamicPageAlignContent"
+                width="auto">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <content>
+                            <Title text="Latest Orders" level="H2"/>
+                            <ToolbarSpacer />
+                            <Button icon="sap-icon://refresh" press=".onRefresh"/>
+                            <Button icon="sap-icon://sort" press=".onSort"/>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column width="10em">
+                        <Text text="{i18n>orderId}" />
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="{i18n>customerName}" />
+                    </Column>
+                     <Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+                        <Text text="{i18n>orderDate}" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="{i18n>orderAmount}" />
+                    </Column>
+                    <Column hAlign="Center">
+                        <Text text="{i18n>orderStatus}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation">
+                        <cells>
+                            <ObjectIdentifier title="{productModel>orderId}"/>
+                            <Text text="{productModel>customer}" />
+                             <Text text="{productModel>date}" />
+                            <ObjectNumber
+                                number="{
+                                    parts:[{path:'productModel>amount'},{path:'i18n>currency'}],
+                                    type: 'sap.ui.model.type.Currency',
+                                    formatOptions: {showMeasure: true}
+                                }"
+                                state="None" />
+                            <ObjectStatus
+                                text="{productModel>status}"
+                                state="{productModel>statusState}"
+                                icon="sap-icon://shipping-status" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

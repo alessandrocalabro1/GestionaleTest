@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/core/UIComponent","sap/m/MessageToast"],function(o,e,n){"use strict";return o.extend("gestionale.controller.Orders",{onInit:function(){},onNavBack:function(){var o=e.getRouterFor(this);o.navTo("RouteDashboard")},onRefresh:function(){n.show("Orders refreshed from server")},onSort:function(){n.show("Sort functionality not implemented in mock")}})});
+//# sourceMappingURL=Orders.controller.js.map

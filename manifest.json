@@ -85,6 +85,20 @@
                     "target": [
                         "TargetProducts"
                     ]
+                },
+                {
+                    "name": "RouteCustomers",
+                    "pattern": "customers",
+                    "target": [
+                        "TargetCustomers"
+                    ]
+                },
+                {
+                    "name": "RouteOrders",
+                    "pattern": "orders",
+                    "target": [
+                        "TargetOrders"
+                    ]
                 }
             ],
             "targets": {
@@ -95,6 +109,14 @@
                 "TargetProducts": {
                     "viewType": "XML",
                     "viewName": "ProductList"
+                },
+                "TargetCustomers": {
+                    "viewType": "XML",
+                    "viewName": "Customers"
+                },
+                "TargetOrders": {
+                    "viewType": "XML",
+                    "viewName": "Orders"
                 }
             }
         },
