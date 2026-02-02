@@ -1,0 +1,108 @@
+{
+    "_version": "1.49.0",
+    "sap.app": {
+        "id": "gestionale",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "ui5-template-standard",
+            "version": "1.0.0"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.108.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {},
+                "sap.tnt": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "gestionale.i18n.i18n"
+                }
+            },
+            "appView": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "productModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/data.json"
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "gestionale.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteDashboard",
+                    "pattern": "",
+                    "target": [
+                        "TargetDashboard"
+                    ]
+                },
+                {
+                    "name": "RouteProducts",
+                    "pattern": "products",
+                    "target": [
+                        "TargetProducts"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetDashboard": {
+                    "viewType": "XML",
+                    "viewName": "Dashboard"
+                },
+                "TargetProducts": {
+                    "viewType": "XML",
+                    "viewName": "ProductList"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "gestionale.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        }
+    }
+}
